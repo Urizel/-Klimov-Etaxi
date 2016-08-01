@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +45,7 @@ public class TripListFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Trip>> call, Response<List<Trip>> response) {
                 mTripList.addAll(response.body());
-                Collections.sort(mTripList);
+                Collections.sort(mTripList, Collections.<Trip>reverseOrder());
                 mAdapter.notifyDataSetChanged();
                 showEmptyData(false);
             }
