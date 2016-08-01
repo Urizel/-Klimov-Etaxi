@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,7 +21,7 @@ import retrofit2.Response;
 
 public class ImageDownLoader extends BroadcastReceiver {
 
-    private static final int DELETE_OFFSET = 5 * 60 * 1000;
+    private static final int DELETE_OFFSET = 10 * 60 * 1000;
 
     public void download(final ImageView image, final String photo, final Context context) {
         final File file = new File(context.getCacheDir(), photo);
