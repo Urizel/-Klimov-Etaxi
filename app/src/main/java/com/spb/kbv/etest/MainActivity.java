@@ -10,18 +10,24 @@ import com.spb.kbv.etest.data.TripRecycleAdapter;
 
 public class MainActivity extends AppCompatActivity implements TripRecycleAdapter.TripSelectListener {
 
+    private Storage mStorage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         getSupportActionBar().setTitle("Ваши поездки");
+
+        mStorage = Storage.getInstance();
+        if (mStorage.getTrip() != null) {
+            mStorage.addTripToStorage(null);
+        }
     }
 
     @Override
     public void showTripInfo(Trip trip) {
-        Storage storage = Storage.getInstance();
-        storage.addTripToStorage(trip);
+        mStorage.addTripToStorage(trip);
         Intent intent = new Intent(this, DetailActivity.class);
         startActivity(intent);
     }

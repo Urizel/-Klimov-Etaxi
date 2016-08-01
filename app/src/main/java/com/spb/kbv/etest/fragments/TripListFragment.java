@@ -15,6 +15,7 @@ import com.spb.kbv.etest.infrastructure.EtestApplication;
 import com.spb.kbv.etest.R;
 import com.spb.kbv.etest.data.Trip;
 import com.spb.kbv.etest.data.TripRecycleAdapter;
+import com.spb.kbv.etest.infrastructure.Storage;
 
 import java.util.ArrayList;
 import java.util.Collections;

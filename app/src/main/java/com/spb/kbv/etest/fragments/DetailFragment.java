@@ -50,6 +50,8 @@ public class DetailFragment extends Fragment {
             time.setText(mTrip.getTimeString());
             driver.setText(mTrip.getVehicle().getDriverName());
             car.setText(mTrip.getVehicleString());
+        } else {
+           getActivity().finish();
         }
 
         return rootView;
